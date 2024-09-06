@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Libzard_Core
+namespace Libzard_Core.DbObject
 {
-    internal class Publisher
+    public class Publisher
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        
+
 
 
 

@@ -1,4 +1,8 @@
 
+using Libzard_Core.Context;
+using Microsoft.EntityFrameworkCore;
+using System;
+
 namespace Libzard_API
 {
     public class Program
@@ -13,6 +17,10 @@ namespace Libzard_API
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            // Database connection
+            builder.Services.AddDbContext<LibzardDbContext>(options =>
+            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             var app = builder.Build();
 
